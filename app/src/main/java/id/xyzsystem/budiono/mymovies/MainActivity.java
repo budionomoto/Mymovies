@@ -30,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         moviesDaftar.setLayoutManager(new LinearLayoutManager(this));
+        moviesAdapter = new MoviesAdapter();
+        moviesDaftar.setAdapter(moviesAdapter);
+
     }
+
+    @Override
+    protected void onDestroy() {
+        eventBus.unregister(this);
+        super.onDestroy();
+    }
+
 }
