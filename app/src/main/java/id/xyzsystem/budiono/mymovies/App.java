@@ -8,6 +8,8 @@ import com.google.gson.GsonBuilder;
 import org.greenrobot.eventbus.EventBus;
 
 import retrofit2.Retrofit;
+import com.google.gson.Gson;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by budiono on 21/01/18.
@@ -61,8 +63,8 @@ public class App extends Application {
         return retrofit;
     }
 
-    public WeatherApi getWeatherApi() {
-        return getRetrofit().create(WeatherApi.class);
+    public MoviesApi getWeatherApi() {
+        return getRetrofit().create(MoviesApi.class);
     }
 
     public static App getInstance() {

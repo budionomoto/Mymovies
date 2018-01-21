@@ -1,5 +1,6 @@
 package id.xyzsystem.budiono.mymovies;
 //file ketiga yang dibuat
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -14,6 +15,6 @@ public interface MoviesApi {
     String API_KEY = App.getInstance().getApplicationContext().getString(R.string.api_key_movies);
 
     @GET("movie/now_playing")
-    Call<MoviesResponse> getDailyForecast(@Query("q") String cityName, @Query("mode") String mode, @Query("units") String unit, @Query("cnt") int countData, @Query("appid") String apiKey);
+    Call<MoviesResponse> getDailyForecast(@Query("api_key") String apiKey, @Query("language") String bahasa, @Query("page") String halaman);
 
 }
