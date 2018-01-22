@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Mymovies</string>
-    <string name="api_key_movies">02c6bc54ddd867f7bcf339600faa7263</string>>
+    <string name="api_key_movies">02c6bc54ddd867f7bcf339600faa7263</string>
+    <string name="api_key_weather">a1da57e96e1d31099ae46599fe4e6687</string>>
 </resources>
