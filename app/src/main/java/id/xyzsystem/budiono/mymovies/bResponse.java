@@ -9,7 +9,8 @@ import java.util.List;
  */
 
 public class bResponse {
-    @SerializedName("list")
+    //ambil semua
+    @SerializedName("results")
     private List<bModel> modelList;
 
     public List<bModel> ambilmodelList() {

@@ -13,13 +13,13 @@ import butterknife.ButterKnife;
  */
 
 public class bHolder extends RecyclerView.ViewHolder{
-    @BindView(R.id.weather_item_image)
-    ImageView weatherImage;
+    @BindView(R.id.gambar)
+    ImageView imgGambar;
 
-    @BindView(R.id.weather_item_desc)
-    TextView weatherDesc;
+    @BindView(R.id.judul)
+    TextView txtJudul;
 
-    private static final int weatherLayout = R.layout.view_holder_movies;
+    private static final int moviesLayout = R.layout.view_holder_movies;
 
     public bHolder(View itemView) {
         super(itemView);
@@ -27,14 +27,14 @@ public class bHolder extends RecyclerView.ViewHolder{
         ButterKnife.bind(this, itemView);
     }
 
-    public TextView ambilWeatherDesc() {
-        return weatherDesc;
+    public TextView ambilJudul() {
+        return txtJudul;
     }
 
-    public ImageView ambilWeatherImage() {
-        return weatherImage;
+    public ImageView ambilGambar() {
+        return imgGambar;
     }
-    public static int getWeatherLayout() {
-        return weatherLayout;
+    public static int ambilLayout() {
+        return moviesLayout;
     }
 }

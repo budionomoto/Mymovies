@@ -9,27 +9,41 @@ import java.util.List;
  */
 
 public class bModel {
+    @SerializedName("poster_path")
+    private String posterPath;
 
-    @SerializedName("weather")
-    private List<Weather> weatherList;
-
-    public class Weather {
-        @SerializedName("description")
-        private String weatherDesc;
-
-        @SerializedName("icon")
-        private String weatherIcon;
+    @SerializedName("title")
+    private String title;
 
 
-        public String ambilWeatherDesc() {
-            return weatherDesc;
+    @SerializedName("results")
+    private List<Movies> moviesList;
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public class Movies {
+        @SerializedName("title")
+        private String moviesJudul;
+
+        @SerializedName("poster_path")
+        private String moviesGambar;
+
+
+        public String ambilJudul() {
+            return moviesJudul;
         }
 
-        public String ambilWeatherIcon() {
-            return weatherIcon;
+        public String ambilGambar() {
+            return moviesGambar;
         }
     }
-    public List<Weather> getWeatherList() {
-        return weatherList;
+    public List<Movies> getMoviesList() {
+        return moviesList;
     }
 }

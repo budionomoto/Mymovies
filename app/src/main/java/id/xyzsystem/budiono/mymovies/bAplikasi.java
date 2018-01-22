@@ -50,7 +50,7 @@ public class bAplikasi extends Application {
         return eventBus;
     }
 
-    public bInterface ambilWeatherApi() {
+    public bInterface ambilMoviesApi() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(bInterface.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

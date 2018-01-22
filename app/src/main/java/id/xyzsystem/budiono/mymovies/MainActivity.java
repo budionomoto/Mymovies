@@ -16,10 +16,10 @@ import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.main_weather_list)
-    RecyclerView mainWeatherList;
+    @BindView(R.id.daftar)
+    RecyclerView Daftar;
 
-    private bAdapter weatherAdapter;
+    private bAdapter moviesAdapter;
     private EventBus eventBus = bAplikasi.ambilInstance().ambilEventBus();
 
     @Override
@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         ButterKnife.bind(this);
 
-        mainWeatherList.setLayoutManager(new GridLayoutManager(this,2) );
-        mainWeatherList.setHasFixedSize(true);
+        Daftar.setLayoutManager(new GridLayoutManager(this,2) );
+        Daftar.setHasFixedSize(true);
 
-        weatherAdapter = new bAdapter();
-        mainWeatherList.setAdapter(weatherAdapter);
+        moviesAdapter = new bAdapter();
+        Daftar.setAdapter(moviesAdapter);
 
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             bModel todayForecast = forecasts.get(0);
 
 
-            weatherAdapter.kirimData(forecasts);
+            moviesAdapter.kirimData(forecasts);
         }else{
 
         }

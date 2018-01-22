@@ -15,26 +15,26 @@ import retrofit2.Response;
  */
 
 public class bController {
-    private static final String TAG = "WeatherController";
+    private static final String TAG = "MoviesController";
     private EventBus eventBus = bAplikasi.ambilInstance().ambilEventBus();
 
     public void getWeatherList() {
         Call<bResponse> dailyForecast =
-                bAplikasi.ambilInstance().ambilWeatherApi().getDailyForecast
-                        ("Jakarta"
-                                , "json"
-                                , "metric"
-                                , 10
-                                , bInterface.API_KEY);
+                bAplikasi.ambilInstance().ambilMoviesApi().ambilMovies
+                        ("02c6bc54ddd867f7bcf339600faa7263"
+                                , "en-US"
+                                , 1);
+
         dailyForecast.enqueue(
             new Callback<bResponse>() {
                 @Override
                 public void onResponse(Call<bResponse> call, Response<bResponse> response) {
                     Log.d(TAG, "onResponse: Success");
                     Log.d(TAG, "onResponse: JSON = " + bAplikasi.ambilInstance().ambilGson().toJson(response.body()));
+
                     List<bModel> forecastList = response.body().ambilmodelList();
-                    bEvent weatherEvent = new bEvent(true, forecastList);
-                    eventBus.post(weatherEvent);
+                    bEvent moviesEvent = new bEvent(true, forecastList);
+                    eventBus.post(moviesEvent);
                 }
 
                 @Override

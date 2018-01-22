@@ -23,7 +23,7 @@ public class bAdapter  extends RecyclerView.Adapter{
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(bHolder.getWeatherLayout(), parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(bHolder.ambilLayout(), parent, false);
         return new bHolder(view);
     }
 
@@ -39,15 +39,17 @@ public class bAdapter  extends RecyclerView.Adapter{
 
     private void setWeatherItem(bHolder holder) {
         bModel forecast = forecasts.get(holder.getAdapterPosition());
-        Glide.with(holder.itemView.getContext()).load(ambilWeatherImageUrl(forecast.getWeatherList().get(0).ambilWeatherIcon())).into(holder.ambilWeatherImage());
+        //Glide.with(holder.itemView.getContext()).load(ambilMoviesImageUrl(forecast.getPosterPath().ambilGambar())).into(holder.ambilGambar());
+        Glide.with(holder.itemView.getContext()).load(ambilMoviesImageUrl(forecast.getPosterPath())).into(holder.ambilGambar());
+        //Glide.with(holder.itemView.getContext()).load(ambilMoviesImageUrl(forecast.getPosterPath())).into(holder.ambilGambar());
+        //Glide.with(holder.itemView.getContext()).load()
 
-
-        holder.ambilWeatherDesc().setText(forecast.getWeatherList().get(0).ambilWeatherDesc());
-
+        holder.ambilJudul().setText(forecast.getTitle());
     }
 
-    private String ambilWeatherImageUrl(String weatherIcon) {
-        return "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+    private String ambilMoviesImageUrl(String moviesPoster) {
+        //return "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+        return "https://image.tmdb.org/t/p/w500/" + moviesPoster + ".jpg";
     }
 
     public void kirimData(List<bModel> forecasts) {

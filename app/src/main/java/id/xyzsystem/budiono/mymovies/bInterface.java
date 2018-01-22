@@ -9,10 +9,15 @@ import retrofit2.http.Query;
  */
 
 public interface bInterface {
-    String BASE_URL = "http://api.openweathermap.org/data/2.5/";
-    String API_KEY = bAplikasi.ambilInstance().getApplicationContext().getString(R.string.api_key_weather);
 
-    @GET("forecast/daily")
-    Call<bResponse> getDailyForecast(@Query("q") String cityName, @Query("mode") String mode, @Query("units") String unit, @Query("cnt") int countData, @Query("appid") String apiKey);
+    //String BASE_URL = "http://api.openweathermap.org/data/2.5/";
+    String BASE_URL = "https://api.themoviedb.org/3/movie/";
+    //String API_KEY = bAplikasi.ambilInstance().getApplicationContext().getString(R.string.api_key_movies);
+    String API_KEY = bAplikasi.ambilInstance().getApplicationContext().getString(R.string.api_key_movies);
 
+    @GET("now_playing")
+    Call<bResponse> ambilMovies(
+            @Query("api_key") String apiKey,
+            @Query("language") String bahasa,
+            @Query("page") int halaman);
 }
