@@ -15,9 +15,16 @@ public class bModel {
     @SerializedName("title")
     private String title;
 
+    @SerializedName("release_date")
+    private  String tanggal;
 
-    @SerializedName("results")
-    private List<Movies> moviesList;
+    //detail
+    @SerializedName("overview")
+    private String sinopsis;
+
+    @SerializedName("vote_average")
+    private String rating;
+
 
     public String getPosterPath() {
         return posterPath;
@@ -27,7 +34,23 @@ public class bModel {
         return title;
     }
 
-    public class Movies {
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+//    @SerializedName("results")
+//    private List<Movies> moviesList;
+
+//    public class Movies {
+        /*
         @SerializedName("title")
         private String moviesJudul;
 
@@ -42,8 +65,11 @@ public class bModel {
         public String ambilGambar() {
             return moviesGambar;
         }
-    }
-    public List<Movies> getMoviesList() {
-        return moviesList;
-    }
+        */
+//    }
+
+//    public List<Movies> getMoviesList() {
+//        return moviesList;
+//    }
+
 }

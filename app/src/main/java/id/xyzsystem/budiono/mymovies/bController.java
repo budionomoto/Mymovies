@@ -21,7 +21,7 @@ public class bController {
     public void getWeatherList() {
         Call<bResponse> dailyForecast =
                 bAplikasi.ambilInstance().ambilMoviesApi().ambilMovies
-                        ("02c6bc54ddd867f7bcf339600faa7263"
+                        (bInterface.API_KEY
                                 , "en-US"
                                 , 1);
 
