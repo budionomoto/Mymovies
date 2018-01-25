@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:text="XYZ MOVIES"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        />
+    <ImageView
+
+        android:id="@+id/logo"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:text="Google Developers"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20sp"
+        android:text="Develop By: Budiono, IAK3-4, 2017"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20sp"
+        android:text="Fasilitator: AR Firman Syahputra"
+        android:textAlignment="center"
+        />
+</LinearLayout>
+
