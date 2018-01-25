@@ -9,11 +9,11 @@ import java.util.List;
 public class bEvent {
     private boolean success;
     private String message;
-    private List<bModel> forecastList;
+    private List<bModel> mvList;
 
-    public bEvent(boolean success, List<bModel> forecastList) {
+    public bEvent(boolean success, List<bModel> mvList) {
         this.success = success;
-        this.forecastList = forecastList;
+        this.mvList = mvList;
     }
 
     public bEvent(boolean success, String message) {
@@ -30,6 +30,6 @@ public class bEvent {
     }
 
     public List<bModel> getForecastList() {
-        return forecastList;
+        return mvList;
     }
 }
